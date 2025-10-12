@@ -1,0 +1,15 @@
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\bin\Debug\net8.0\AlgoX.exe
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\bin\Debug\net8.0\AlgoX.deps.json
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\bin\Debug\net8.0\AlgoX.runtimeconfig.json
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\bin\Debug\net8.0\AlgoX.dll
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\bin\Debug\net8.0\AlgoX.pdb
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.AssemblyInfoInputs.cache
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.AssemblyInfo.cs
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.csproj.CoreCompileInputs.cache
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.sourcelink.json
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.dll
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\refint\AlgoX.dll
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.pdb
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\AlgoX.genruntimeconfig.cache
+C:\Users\Usuari\Desktop\AlgoX\AlgoX\obj\Debug\net8.0\ref\AlgoX.dll
