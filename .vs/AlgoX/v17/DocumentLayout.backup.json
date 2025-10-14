@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{87D848E7-172F-4694-BB1A-8500088CCDD0}|AlgoX\\AlgoX.csproj|solutionrelative:algox\\code\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87D848E7-172F-4694-BB1A-8500088CCDD0}|AlgoX\\AlgoX.csproj|c:\\users\\usuari\\desktop\\algox\\algox\\associations\\associations.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{87D848E7-172F-4694-BB1A-8500088CCDD0}|AlgoX\\AlgoX.csproj|solutionrelative:algox\\associations\\associations.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{87D848E7-172F-4694-BB1A-8500088CCDD0}|AlgoX\\AlgoX.csproj|c:\\users\\usuari\\desktop\\algox\\algox\\code\\algoxhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87D848E7-172F-4694-BB1A-8500088CCDD0}|AlgoX\\AlgoX.csproj|solutionrelative:algox\\code\\algoxhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Association.cs",
               "DocumentMoniker": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\Association.cs",
               "RelativeDocumentMoniker": "AlgoX\\Code\\Association.cs",
               "ToolTip": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\Association.cs",
               "RelativeToolTip": "AlgoX\\Code\\Association.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-11T12:18:13.855Z",
               "EditorCaption": ""
@@ -44,25 +40,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Associations.txt",
-              "DocumentMoniker": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Associations\\Associations.txt",
-              "RelativeDocumentMoniker": "AlgoX\\Associations\\Associations.txt",
-              "ToolTip": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Associations\\Associations.txt",
-              "RelativeToolTip": "AlgoX\\Associations\\Associations.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-10-11T11:54:07.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "AlgoXHelper.cs",
               "DocumentMoniker": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\AlgoXHelper.cs",
               "RelativeDocumentMoniker": "AlgoX\\Code\\AlgoXHelper.cs",
               "ToolTip": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\AlgoXHelper.cs",
               "RelativeToolTip": "AlgoX\\Code\\AlgoXHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAIBJwEMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-11T11:51:13.28Z",
               "EditorCaption": ""
@@ -73,9 +56,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\Program.cs",
               "RelativeDocumentMoniker": "AlgoX\\Code\\Program.cs",
-              "ToolTip": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\Program.cs*",
-              "RelativeToolTip": "AlgoX\\Code\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Usuari\\Desktop\\AlgoX\\AlgoX\\Code\\Program.cs",
+              "RelativeToolTip": "AlgoX\\Code\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-11T11:23:27.651Z",
               "EditorCaption": ""

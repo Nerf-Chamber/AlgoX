@@ -65,7 +65,34 @@ namespace AlgoX.Code
         }
         private char InvertElementToAssociated(char c)
         {
-            // TODO
+            bool isCapital = Char.IsUpper(c);
+
+            if (Char.IsLetter(c))
+            {
+                int numAssociatedLetter = 0; //Mala pràctica
+                for (int i = 0; i < LetterAssociations.Length; i++)
+                {
+                    if (LetterAssociations[i].AssociatedElement == c)
+                    {
+                        numAssociatedLetter = i;
+                        i = LetterAssociations.Length;
+                    }
+                }
+                return isCapital ? LetterAssociations[numAssociatedLetter].Element : Char.ToLower(LetterAssociations[numAssociatedLetter].Element);
+            }
+            else if (Char.IsDigit(c))
+            {
+                int numAssociatedNumber = 0; //Mala pràctica
+                for (int i = 0; i < NumberAssociations.Length; i++)
+                {
+                    if (NumberAssociations[i].AssociatedElement == c)
+                    {
+                        numAssociatedNumber = i;
+                        i = NumberAssociations.Length;
+                    }
+                }
+                return (char)NumberAssociations[numAssociatedNumber].Element;
+            }
             return c;
         }
 
