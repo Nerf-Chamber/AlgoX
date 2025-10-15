@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 
 namespace AlgoX.Code
@@ -6,8 +6,8 @@ namespace AlgoX.Code
     public class AlgoXHelper
     {
         private static bool AreThereAssociations = false;
-        private static IList<char> targetLetters;
-        private static IList<int> targetNumbers;
+        private static IList<char> targetLetters = new List<char>();
+        private static IList<int> targetNumbers = new List<int>();
 
         private string Path { get; set; }
         private char[] LettersToConsider { get; set; }
@@ -19,7 +19,13 @@ namespace AlgoX.Code
         {
             LettersToConsider = lettersToConsider;
             NumbersToConsider = numbersToConsider;
+            LetterAssociations = new Association<char>[lettersToConsider.Length];
+            NumberAssociations = new Association<int>[numbersToConsider.Length];
             Path = path;
+        }
+
+        public void GeneralSetup()
+        {
             ReadAssociationsFromTxt();
             if (!AreThereAssociations)
             {
@@ -27,7 +33,6 @@ namespace AlgoX.Code
                 WriteAssociationsInTxt(GenerateLetterAssociations(), GenerateNumberAssociations());
             }
         }
-
         public string EncodeMessage(string msg)
         {
             StringBuilder sb = new StringBuilder();
@@ -52,27 +57,28 @@ namespace AlgoX.Code
         {
             bool isCapital = Char.IsUpper(c);
            
-            if (Char.IsLetter(c))
+            if (IsValidLetter(c))
             {
                 int numLetter = Convert.ToInt32(Char.ToUpper(c)) - Convert.ToInt32('A'); //Letters input in the constructor must be capital
                 return isCapital ? LetterAssociations[numLetter].AssociatedElement : Char.ToLower(LetterAssociations[numLetter].AssociatedElement);
             }
             else if (Char.IsDigit(c))
             {
-                return (char)NumberAssociations[(int)char.GetNumericValue(c)].AssociatedElement;
+                return NumberAssociations[(int)char.GetNumericValue(c)].AssociatedElement.ToString().ToCharArray()[0]; //Warrada
             }
             return c;
         }
         private char InvertElementToAssociated(char c)
         {
             bool isCapital = Char.IsUpper(c);
+            char operationChar = Char.ToUpper(c);
 
-            if (Char.IsLetter(c))
+            if (IsValidLetter(operationChar))
             {
                 int numAssociatedLetter = 0; //Mala pràctica
                 for (int i = 0; i < LetterAssociations.Length; i++)
                 {
-                    if (LetterAssociations[i].AssociatedElement == c)
+                    if (LetterAssociations[i].AssociatedElement == operationChar)
                     {
                         numAssociatedLetter = i;
                         i = LetterAssociations.Length;
@@ -82,16 +88,17 @@ namespace AlgoX.Code
             }
             else if (Char.IsDigit(c))
             {
+                int operationalNum = (int)char.GetNumericValue(c);
                 int numAssociatedNumber = 0; //Mala pràctica
                 for (int i = 0; i < NumberAssociations.Length; i++)
                 {
-                    if (NumberAssociations[i].AssociatedElement == c)
+                    if (NumberAssociations[i].AssociatedElement == operationalNum)
                     {
                         numAssociatedNumber = i;
                         i = NumberAssociations.Length;
                     }
                 }
-                return (char)NumberAssociations[numAssociatedNumber].Element;
+                return NumberAssociations[numAssociatedNumber].Element.ToString().ToCharArray()[0];
             }
             return c;
         }
@@ -100,11 +107,11 @@ namespace AlgoX.Code
         {
             foreach (char letter in LettersToConsider)
             {
-                targetLetters.Append(letter);
+                targetLetters.Add(letter);
             }
             foreach (int num in NumbersToConsider)
             {
-                targetNumbers.Append(num);
+                targetNumbers.Add(num);
             }
         }
         private Association<char>[] GenerateLetterAssociations()
@@ -113,7 +120,7 @@ namespace AlgoX.Code
 
             for (int i = 0; i < LettersToConsider.Length; i++)
             {
-                int assNumber = RandomNumberBetweenRange(0, targetLetters.Count);
+                int assNumber = RandomNumberBetweenRange(0, targetLetters.Count-1);
                 Association<char> a = new Association<char>(LettersToConsider[i], targetLetters[assNumber]);
                 letterAssociations[i] = a;
                 targetLetters.RemoveAt(assNumber);
@@ -127,7 +134,7 @@ namespace AlgoX.Code
 
             for (int i = 0; i < NumbersToConsider.Length; i++)
             {
-                int assNumber = RandomNumberBetweenRange(0, targetLetters.Count);
+                int assNumber = RandomNumberBetweenRange(0, targetNumbers.Count-1);
                 Association<int> a = new Association<int>(NumbersToConsider[i], targetNumbers[assNumber]);
                 numberAssociations[i] = a;
                 targetNumbers.RemoveAt(assNumber);
@@ -174,7 +181,7 @@ namespace AlgoX.Code
                                 (int)char.GetNumericValue(line[0]),
                                 (int)char.GetNumericValue(line[1])
                             );
-                            NumberAssociations[i] = new Association<int>(nums.Item1, nums.Item2);
+                            NumberAssociations[i-LettersToConsider.Length] = new Association<int>(nums.Item1, nums.Item2);
                         }
                         i++;
                     }
@@ -186,6 +193,12 @@ namespace AlgoX.Code
         {
             Random r = new Random();
             return r.Next(min, max + 1);
+        }
+        private static bool IsValidLetter(char c)
+        {
+            char operationalChar = Char.ToUpper(c);
+            int asciiCode = (int)operationalChar;
+            return (int)'A' <= asciiCode && asciiCode <= (int)'Z'; 
         }
     }
 }
