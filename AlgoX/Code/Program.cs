@@ -1,12 +1,63 @@
-﻿namespace AlgoX.Code;
+namespace AlgoX.Code;
 
 public class Program
 {
     public static void Main()
     {
         const string txtPath = "../../../Associations/Associations.txt";
+        const string selectOption = "\n Selected option: ";
+        const string menu = "\n ALGO X MENU" +
+            "\n -------------" +
+            "\n [1] - Encode message" +
+            "\n [2] - Decode message" +
+            "\n [0] - Exit";
 
-        string message = string.Empty;
-        string codedMessage = string.Empty;
+        bool exit = false;
+        string menuOption = string.Empty;
+
+        int numLetters = 26;
+        int numNumbers = 10;
+
+        char[] letters = new char[numLetters];
+        int[] numbers = new int[numNumbers];
+
+        for (int i = 65; i < numLetters + 65; i++)
+        {
+            letters[i-65] = (char)i;
+        }
+        for (int i = 0; i < numNumbers; i++)
+        {
+            numbers[i] = i;
+        }
+
+        AlgoXHelper algox = new AlgoXHelper(letters, numbers, txtPath);
+        algox.GeneralSetup();
+
+        while (!exit)
+        {
+            Console.WriteLine(menu);
+            Console.Write(selectOption);
+            menuOption = Console.ReadLine();
+
+            switch (menuOption)
+            {
+                case "0":
+                    exit = true;
+                    break;
+                case "1":
+                    Console.Write("\n Write your message: ");
+                    string msgEncode = Console.ReadLine();
+                    Console.WriteLine($"\n Encoded message: {algox.EncodeMessage(msgEncode)}");
+                    break;
+                case "2":
+                    Console.Write("\n Write your message: ");
+                    string msgDecode = Console.ReadLine();
+                    Console.WriteLine($"\n Decoded message: {algox.DecodeMessage(msgDecode)}");
+                    break;
+                default:
+                    Console.WriteLine("\n Aquesta opció no és vàlida!");
+                    break;
+            }
+        }
     }
 }
