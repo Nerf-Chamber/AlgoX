@@ -55,7 +55,7 @@ public class Program
                     Console.WriteLine($"\n Decoded message: {algox.DecodeMessage(msgDecode)}");
                     break;
                 default:
-                    Console.WriteLine("\n Aquesta opció no és vàlida!");
+                    Console.WriteLine("\n This option is invalid!");
                     break;
             }
         }
