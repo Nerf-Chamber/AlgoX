@@ -1,4 +1,3 @@
-using System.IO;
 using System.Text;
 
 namespace AlgoX.Code
@@ -32,6 +31,12 @@ namespace AlgoX.Code
                 SetupLists();
                 WriteAssociationsInTxt(GenerateLetterAssociations(), GenerateNumberAssociations());
             }
+        }
+        public void RegenerateAssociations()
+        {
+            SetupLists();
+            WriteAssociationsInTxt(GenerateLetterAssociations(), GenerateNumberAssociations());
+            ReadAssociationsFromTxt();
         }
         public string EncodeMessage(string msg)
         {
@@ -144,6 +149,7 @@ namespace AlgoX.Code
         }
         private void WriteAssociationsInTxt(Association<char>[] letterAss, Association<int>[] numberAss)
         {
+            File.WriteAllText(Path, string.Empty);
             using (StreamWriter sw = new StreamWriter(Path, true))
             {
                 foreach (Association<char> a in letterAss)
@@ -188,6 +194,12 @@ namespace AlgoX.Code
                 }
                 AreThereAssociations = true;
             }
+        }
+        public static void PrintWithColor(string msg, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(msg);
+            Console.ForegroundColor = ConsoleColor.White;
         }
         private static int RandomNumberBetweenRange(int min, int max)
         {

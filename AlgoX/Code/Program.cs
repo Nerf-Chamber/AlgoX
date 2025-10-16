@@ -10,6 +10,7 @@ public class Program
             "\n -------------" +
             "\n [1] - Encode message" +
             "\n [2] - Decode message" +
+            "\n [3] - New associations" +
             "\n [0] - Exit";
 
         bool exit = false;
@@ -47,12 +48,16 @@ public class Program
                 case "1":
                     Console.Write("\n Write your message: ");
                     string msgEncode = Console.ReadLine();
-                    Console.WriteLine($"\n Encoded message: {algox.EncodeMessage(msgEncode)}");
+                    AlgoXHelper.PrintWithColor($"\n Encoded message: {algox.EncodeMessage(msgEncode)}", ConsoleColor.Yellow);
                     break;
                 case "2":
                     Console.Write("\n Write your message: ");
                     string msgDecode = Console.ReadLine();
-                    Console.WriteLine($"\n Decoded message: {algox.DecodeMessage(msgDecode)}");
+                    AlgoXHelper.PrintWithColor($"\n Decoded message: {algox.DecodeMessage(msgDecode)}", ConsoleColor.Cyan);
+                    break;
+                case "3":
+                    algox.RegenerateAssociations();
+                    AlgoXHelper.PrintWithColor($"\n New associations created!", ConsoleColor.Green);
                     break;
                 default:
                     Console.WriteLine("\n This option is invalid!");
